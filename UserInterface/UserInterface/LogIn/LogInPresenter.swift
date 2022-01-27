@@ -45,6 +45,7 @@ private extension LogInPresenter {
             
             if (self?.userStorage.checkPassword(login: login, passoword: password)) == true {
                 print("Success")
+                self?.viewScene?.loadingIndicatorHandler?()
                 //self?.router.next(controller: MainScene.build())
             } else {
                 self?.controller?.showAlert(message: "Пароль не верен")

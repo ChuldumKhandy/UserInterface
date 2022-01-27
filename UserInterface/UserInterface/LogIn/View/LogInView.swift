@@ -10,6 +10,7 @@ import UIKit
 protocol ILogInView: UIView {
     var checkPasswordHandler: ((_ login: String?, _ password: String?) -> Void)? { get set }
     var registrationHandler: (() -> Void)? { get set }
+    var loadingIndicatorHandler: (() -> Void)? { get set }
 }
 
 final class LogInView: UIView {
@@ -20,12 +21,17 @@ final class LogInView: UIView {
     private let registrationButton = MainButton()
     private let textFieldsStackView = UIStackView()
     private let buttonsStackView = UIStackView()
+    private let cloudView = CloudView()
     var checkPasswordHandler: ((_ login: String?, _ password: String?) -> Void)?
     var registrationHandler: (() -> Void)?
+    var loadingIndicatorHandler: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setup()
+        self.loadingIndicatorHandler = { [weak self] in
+            self?.cloudView.isHidden = false
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +46,7 @@ extension LogInView: ILogInView {
 private extension LogInView {
     func setup() {
         self.backgroundColor = MainPallete.marble
+        self.cloudView.isHidden = true
         self.addSubview()
         self.customizeLabel()
         self.customizeStackViews()
@@ -52,6 +59,7 @@ private extension LogInView {
         self.addSubview(self.titleLabel)
         self.addSubview(self.textFieldsStackView)
         self.addSubview(self.buttonsStackView)
+        self.addSubview(self.cloudView)
     }
     
     func customizeLabel() {
@@ -110,5 +118,11 @@ private extension LogInView {
         self.buttonsStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         self.buttonsStackView.widthAnchor.constraint(equalToConstant: ButtonConstraint.width.rawValue).isActive = true
         self.buttonsStackView.topAnchor.constraint(equalTo: self.textFieldsStackView.bottomAnchor, constant: ViewConstraint.margin.rawValue * 2).isActive = true
+        
+        self.cloudView.translatesAutoresizingMaskIntoConstraints = false
+        self.cloudView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        self.cloudView.topAnchor.constraint(equalTo: self.textFieldsStackView.bottomAnchor).isActive = true
+        self.cloudView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.cloudView.widthAnchor.constraint(equalToConstant: 120).isActive = true
     }
 }

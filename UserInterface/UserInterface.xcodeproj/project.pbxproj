@@ -20,6 +20,7 @@
 		CE31852E27A16B6100DA40B1 /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31852D27A16B6100DA40B1 /* MainTextField.swift */; };
 		CE31853127A1963600DA40B1 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31853027A1963600DA40B1 /* UserStorage.swift */; };
 		CE31853727A1994400DA40B1 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31853627A1994400DA40B1 /* MainScene.swift */; };
+		CEC2B3BB27A257C100F35242 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2B3BA27A257C100F35242 /* CloudView.swift */; };
 		CEF3E3EF27A1480300058EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3E3EE27A1480300058EA7 /* AppDelegate.swift */; };
 		CEF3E3F127A1480300058EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3E3F027A1480300058EA7 /* SceneDelegate.swift */; };
 		CEF3E3F327A1480300058EA7 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3E3F227A1480300058EA7 /* LogInViewController.swift */; };
@@ -41,6 +42,7 @@
 		CE31852D27A16B6100DA40B1 /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
 		CE31853027A1963600DA40B1 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		CE31853627A1994400DA40B1 /* MainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		CEC2B3BA27A257C100F35242 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
 		CEF3E3EB27A1480300058EA7 /* UserInterface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserInterface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF3E3EE27A1480300058EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF3E3F027A1480300058EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				CEF3E3F227A1480300058EA7 /* LogInViewController.swift */,
 				CE31850627A14ABD00DA40B1 /* LogInView.swift */,
+				CEC2B3BA27A257C100F35242 /* CloudView.swift */,
 				CE31851527A14B9100DA40B1 /* LogInNavigation.swift */,
 			);
 			path = View;
@@ -224,6 +227,7 @@
 				CE31852727A1578600DA40B1 /* MainPallete.swift in Sources */,
 				CEF3E3F127A1480300058EA7 /* SceneDelegate.swift in Sources */,
 				CE31851327A14B4800DA40B1 /* LogInRouter.swift in Sources */,
+				CEC2B3BB27A257C100F35242 /* CloudView.swift in Sources */,
 				CE31852A27A16A0700DA40B1 /* MainButton.swift in Sources */,
 				CE31853727A1994400DA40B1 /* MainScene.swift in Sources */,
 				CE31851027A14B3A00DA40B1 /* LogInAssembly.swift in Sources */,
