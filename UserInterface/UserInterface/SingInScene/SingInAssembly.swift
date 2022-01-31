@@ -1,5 +1,5 @@
 //
-//  MainScene.swift
+//  SingInAssembly.swift
 //  UserInterface
 //
 //  Created by user on 26.01.2022.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class MainScene {
+final class SingInAssembly {
     static func build() -> UIViewController {
-        let router = LogInRouter()
-        let presenter = LogInPresenter(router: router)
-        let controller = LogInViewController(presenter: presenter)
+        let router = SingInRouter()
+        let presenter = SingInPresenter(router: router)
+        let controller = SingInViewController(presenter: presenter)
         router.setRootController(controller: controller)
         return controller
     }

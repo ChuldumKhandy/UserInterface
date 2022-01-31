@@ -1,5 +1,5 @@
 //
-//  LogInPresenter.swift
+//  SingInPresenter.swift
 //  UserInterface
 //
 //  Created by user on 26.01.2022.
@@ -7,24 +7,24 @@
 
 import Foundation
 
-protocol ILogInPresenter {
-    func loadView(controller: ILogInViewController, viewScene: ILogInView)
+protocol ISingInPresenter {
+    func loadView(controller: ISingInViewController, viewScene: ISingInView)
 }
 
-final class LogInPresenter {
-    private weak var controller: ILogInViewController?
-    private weak var viewScene: ILogInView?
+final class SingInPresenter {
+    private weak var controller: ISingInViewController?
+    private weak var viewScene: ISingInView?
     private let userStorage: IUserStorage
-    private let router: ILogInRouter
+    private let router: ISingInRouter
     
-    init(router: LogInRouter) {
+    init(router: SingInRouter) {
         self.router = router
         self.userStorage = UserStorage()
     }
 }
 
-extension LogInPresenter: ILogInPresenter {
-    func loadView(controller: ILogInViewController, viewScene: ILogInView) {
+extension SingInPresenter: ISingInPresenter {
+    func loadView(controller: ISingInViewController, viewScene: ISingInView) {
         self.controller = controller
         self.viewScene = viewScene
         self.sigin()
@@ -32,7 +32,7 @@ extension LogInPresenter: ILogInPresenter {
     }
 }
 
-private extension LogInPresenter {
+private extension SingInPresenter {
     func sigin() {
         self.viewScene?.checkPasswordHandler = { [weak self] login, password in
             guard let login = login,
@@ -44,9 +44,8 @@ private extension LogInPresenter {
             }
             
             if (self?.userStorage.checkPassword(login: login, passoword: password)) == true {
-                print("Success")
                 self?.viewScene?.loadingIndicatorHandler?()
-                //self?.router.next(controller: MainScene.build())
+                self?.router.next(controller: MainScene.createTabs())
             } else {
                 self?.controller?.showAlert(message: "Пароль не верен")
             }
@@ -69,7 +68,7 @@ private extension LogInPresenter {
                 self?.controller?.showAlert(message: "Введите логин и пароль")
                 return
             }
-            let newUser = LogInUser(login: login, password: password)
+            let newUser = LogInDataUser(login: login, password: password)
             self?.userStorage.saveUser(user: newUser)
             self?.controller?.showAlert(message: "Данные сохранены")
         }

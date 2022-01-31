@@ -1,5 +1,5 @@
 //
-//  LogInUser.swift
+//  LogInDataUser.swift
 //  UserInterface
 //
 //  Created by user on 26.01.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LogInUser {
+final class LogInDataUser {
     let login: String
     let password: String
     

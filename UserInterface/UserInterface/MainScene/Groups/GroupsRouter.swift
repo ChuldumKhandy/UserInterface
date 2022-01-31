@@ -1,26 +1,19 @@
-//
-//  LogInRouter.swift
-//  UserInterface
-//
-//  Created by user on 26.01.2022.
-//
-
 import UIKit
 
-protocol ILogInRouter {
+protocol IGroupsRouter {
     func setRootController(controller: UIViewController)
-    func next(controller: UIViewController)
+    func nextVC(controller: UIViewController)
 }
 
-final class LogInRouter {
+final class GroupsRouter {
     private var controller: UIViewController?
 }
 
-extension LogInRouter: ILogInRouter {
+extension GroupsRouter: IGroupsRouter {
     func setRootController(controller: UIViewController) {
         self.controller = controller
     }
-    func next(controller: UIViewController) {
+    func nextVC(controller: UIViewController) {
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }
 }

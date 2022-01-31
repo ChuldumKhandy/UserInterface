@@ -25,10 +25,10 @@ enum Font {
     }
 }
 
-enum FontSize: CGFloat {
-    case title = 22
-    case large = 18
-    case regular = 16
-    case small = 14
-    case weight = 300
+enum FontSize {
+    static let title: CGFloat = 22
+    static let large: CGFloat = 18
+    static let regular: CGFloat = 16
+    static let small: CGFloat = 12
+    static let weight: CGFloat = 300
 }

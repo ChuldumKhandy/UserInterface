@@ -7,10 +7,25 @@
 
 import UIKit
 
-enum ViewConstraint: CGFloat  {
-    case stackViewSpacing = 16
-    case margin = 40
-    case top = 150
+enum ViewConstraint  {
+    static let stackViewSpacing: CGFloat = 16
+    static let margin: CGFloat = 40
+    static let top: CGFloat = 200
+}
+
+enum CloudViewConstraint {
+    static let height: CGFloat = 60
+    static let width: CGFloat = 120
+}
+
+enum NewsConstraint {
+    static let width = UIScreen.main.bounds.width
+    static let height = NewsConstraint.width + NewsConstraint.cellHeader * 2 + NewsConstraint.cellFooter
+    static let minimumLineSpacing: CGFloat = 16
+    static let cellMargin: CGFloat = 10
+    static let cellHeader: CGFloat = 30
+    static let cellFooter: CGFloat = 20
+    static let controlWidth: CGFloat = 40
 }
 
 enum TextFieldConstraint: CGFloat  {

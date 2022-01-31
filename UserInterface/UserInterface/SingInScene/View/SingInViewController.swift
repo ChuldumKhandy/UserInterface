@@ -7,21 +7,19 @@
 
 import UIKit
 
-protocol ILogInViewController: AnyObject {
-    var registrationDataHandler: ((_ login: String?, _ password: String?) -> Void)? { get set }
+protocol ISingInViewController: AnyObject {
+    var registrationDataHandler: ((_ SingIn: String?, _ password: String?) -> Void)? { get set }
     func showAlert(message: String)
     func registrationAlert()
 }
 
-final class LogInViewController: UIViewController {
-    private let viewScene: ILogInView
-    private let navigation: LogInNavigation
-    private let presenter: ILogInPresenter
-    var registrationDataHandler: ((_ login: String?, _ password: String?) -> Void)?
+final class SingInViewController: UIViewController {
+    private let viewScene: ISingInView
+    private let presenter: ISingInPresenter
+    var registrationDataHandler: ((_ SingIn: String?, _ password: String?) -> Void)?
     
-    init(presenter: LogInPresenter) {
-        self.viewScene = LogInView(frame: UIScreen.main.bounds)
-        self.navigation = LogInNavigation()
+    init(presenter: SingInPresenter) {
+        self.viewScene = SingInView(frame: UIScreen.main.bounds)
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,7 +30,7 @@ final class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigation.loadView(controller: self)
+        self.navigationController?.isNavigationBarHidden = true
         self.presenter.loadView(controller: self, viewScene: self.viewScene)
     }
     
@@ -42,7 +40,7 @@ final class LogInViewController: UIViewController {
     }
 }
 
-extension LogInViewController: ILogInViewController {
+extension SingInViewController: ISingInViewController {
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Внимание", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Понятно", style: .default, handler: nil))
@@ -59,9 +57,9 @@ extension LogInViewController: ILogInViewController {
         }
         
         let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
-            if let login = alert.textFields?[0].text,
+            if let SingIn = alert.textFields?[0].text,
                let password = alert.textFields?[1].text {
-                self.registrationDataHandler?(login, password)
+                self.registrationDataHandler?(SingIn, password)
             }
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: nil )

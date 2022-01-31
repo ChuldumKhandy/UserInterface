@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IUserStorage {
-    func saveUser(user: LogInUser)
+    func saveUser(user: LogInDataUser)
     func checkPassword(login: String, passoword: String) -> Bool
 }
 
@@ -22,7 +22,7 @@ final class UserStorage {
 }
 
 extension UserStorage: IUserStorage {
-    func saveUser(user: LogInUser) {
+    func saveUser(user: LogInDataUser) {
         defaults.set(user.login, forKey: SettingsKeys.userLogin.rawValue)
         defaults.set(user.password, forKey: SettingsKeys.userPassword.rawValue)
     }
