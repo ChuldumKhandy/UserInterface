@@ -30,7 +30,7 @@ extension NewsCollectionView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let news = New()
-        cell.configureCell(name: news.name, date: news.date, avatar: news.avatar, description: news.description, image: news.image)
+        cell.setDataForCell(name: news.name, date: news.date, avatar: news.avatar, description: news.description, image: news.image)
         return cell
     }
 }

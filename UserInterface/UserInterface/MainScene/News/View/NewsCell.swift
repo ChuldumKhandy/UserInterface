@@ -20,6 +20,7 @@ final class NewsCell: UICollectionViewCell {
         super.init(frame: frame)
         self.backgroundColor = MainPallete.alabaster
         self.addSubview()
+        self.customizeCell()
         self.customizeControl()
         self.setConstraints()
     }
@@ -28,17 +29,12 @@ final class NewsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureCell(name: String, date: String, avatar: UIImage?, description: String?, image: UIImage?) {
+    func setDataForCell(name: String, date: String, avatar: UIImage?, description: String?, image: UIImage?) {
         self.nameLabel.text = name
-        self.nameLabel.font = Font.thonburi(size: FontSize.regular).uiFont
         self.dateLabel.text = date
-        self.dateLabel.font = Font.thonburiStyle(size: FontSize.small, style: .light).uiFont
-        self.dateLabel.textColor = .gray
         self.avatarImageView.image = avatar
         self.descriptionLabel.text = description
-        self.descriptionLabel.font = Font.thonburi(size: FontSize.regular).uiFont
         self.newImageView.image = image
-        self.newImageView.contentMode = .scaleAspectFit
     }
 }
 
@@ -53,6 +49,15 @@ private extension NewsCell {
         self.contentView.addSubview(self.commentControl)
         self.contentView.addSubview(self.shareControl)
         self.contentView.addSubview(self.browsingControl)
+    }
+    
+    func customizeCell() {
+        self.nameLabel.font = MainFont.thonburi(size: FontSize.regular).uiFont
+        self.dateLabel.font = MainFont.thonburiStyle(size: FontSize.small, style: .light).uiFont
+        self.dateLabel.textColor = .gray
+        self.descriptionLabel.text = description
+        self.descriptionLabel.font = MainFont.thonburi(size: FontSize.regular).uiFont
+        self.newImageView.contentMode = .scaleAspectFit
     }
     
     func customizeControl() {

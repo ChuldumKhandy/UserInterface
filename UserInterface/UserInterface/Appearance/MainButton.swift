@@ -25,6 +25,6 @@ final class MainButton: UIButton {
         self.frame.size.height = ButtonConstraint.height.rawValue
         self.frame.size.width = ButtonConstraint.width.rawValue
         self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = Font.thonburi(size: FontSize.regular).uiFont
+        self.titleLabel?.font = MainFont.thonburi(size: FontSize.regular).uiFont
     }
 }

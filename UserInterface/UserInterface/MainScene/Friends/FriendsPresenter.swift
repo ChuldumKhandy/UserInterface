@@ -8,11 +8,11 @@ final class FriendsPresenter {
     private weak var controller: IFriendsViewController?
     private weak var viewScene: IFriendsViewScene?
     private let router: IFriendsRouter
-    private let User: IUser
+    private let Friend: IFriend
     
-    init(User: User, router: FriendsRouter) {
+    init(Friend: Friend, router: FriendsRouter) {
         self.router = router
-        self.User = User
+        self.Friend = Friend
     }
 }
 

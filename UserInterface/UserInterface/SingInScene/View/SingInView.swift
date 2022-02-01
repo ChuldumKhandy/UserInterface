@@ -64,7 +64,7 @@ private extension SingInView {
     
     func customizeLabel() {
         self.titleLabel.text = "Добро пожаловать!"
-        self.titleLabel.font = Font.thonburiStyle(size: FontSize.title, style: .bold).uiFont
+        self.titleLabel.font = MainFont.thonburiStyle(size: FontSize.title, style: .bold).uiFont
         self.titleLabel.textColor = MainPallete.lavender
         self.titleLabel.textAlignment = .center
     }
@@ -82,7 +82,7 @@ private extension SingInView {
     
     func customizeTextFields() {
         let attributes = [NSAttributedString.Key.foregroundColor: MainPallete.lavender,
-                          .font : Font.thonburi(size: FontSize.regular).uiFont]
+                          .font : MainFont.thonburi(size: FontSize.regular).uiFont]
         self.loginTextField.attributedPlaceholder = NSAttributedString(string: "Телефон или email", attributes: attributes)
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Пароль", attributes: attributes)
     }

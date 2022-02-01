@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Font {
+enum MainFont {
     enum Style: String {
             case bold = "Bold"
             case light = "Light"
