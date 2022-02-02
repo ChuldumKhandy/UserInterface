@@ -25,7 +25,7 @@ enum NewsConstraint {
     static let cellMargin: CGFloat = 16
     static let cellHeader: CGFloat = 30
     static let cellFooter: CGFloat = 20
-    static let controlWidth: CGFloat = 40
+    static let counterWidth: CGFloat = 30
 }
 
 enum FriendsConstraint {

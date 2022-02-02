@@ -1,14 +1,20 @@
 import UIKit
 
 protocol INewsView: UIView {
+    var getNewsHandler: (([New]) -> Void?)? { get set }
 }
 
 final class NewsView: UIView {
     private let newsCollection = NewsCollectionView()
+    var getNewsHandler: (([New]) -> Void?)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.customizeView()
+        self.getNewsHandler = { [weak self] news in
+            self?.newsCollection.setNews(news: news)
+        }
+        
     }
     
     required init?(coder: NSCoder) {
