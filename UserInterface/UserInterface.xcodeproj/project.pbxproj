@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE07D11C27AA646C008F1321 /* ListOfMyGroupsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07D11B27AA646C008F1321 /* ListOfMyGroupsTableView.swift */; };
+		CE07D11F27AA648B008F1321 /* GroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07D11E27AA648A008F1321 /* GroupsCell.swift */; };
 		CE31850727A14ABD00DA40B1 /* SingInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31850627A14ABD00DA40B1 /* SingInView.swift */; };
 		CE31850A27A14AD500DA40B1 /* SingInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31850927A14AD500DA40B1 /* SingInPresenter.swift */; };
 		CE31850D27A14B0100DA40B1 /* LogInDataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE31850C27A14B0100DA40B1 /* LogInDataUser.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE07D11B27AA646C008F1321 /* ListOfMyGroupsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMyGroupsTableView.swift; sourceTree = "<group>"; };
+		CE07D11E27AA648A008F1321 /* GroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCell.swift; sourceTree = "<group>"; };
 		CE31850627A14ABD00DA40B1 /* SingInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInView.swift; sourceTree = "<group>"; };
 		CE31850927A14AD500DA40B1 /* SingInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInPresenter.swift; sourceTree = "<group>"; };
 		CE31850C27A14B0100DA40B1 /* LogInDataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInDataUser.swift; sourceTree = "<group>"; };
@@ -182,9 +186,11 @@
 		CE4B8C6F27A4015700B3CA49 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE4B8C5827A3E99600B3CA49 /* GroupsNavigation.swift */,
 				CE4B8C5927A3E99600B3CA49 /* GroupsViewController.swift */,
+				CE4B8C5827A3E99600B3CA49 /* GroupsNavigation.swift */,
 				CE4B8C5727A3E99600B3CA49 /* GroupsView.swift */,
+				CE07D11B27AA646C008F1321 /* ListOfMyGroupsTableView.swift */,
+				CE07D11E27AA648A008F1321 /* GroupsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,7 +401,9 @@
 				CE31852A27A16A0700DA40B1 /* MainButton.swift in Sources */,
 				CE4B8C3627A3E6A500B3CA49 /* NewsView.swift in Sources */,
 				CE4B8C4127A3E77300B3CA49 /* FriendsRouter.swift in Sources */,
+				CE07D11C27AA646C008F1321 /* ListOfMyGroupsTableView.swift in Sources */,
 				CE4B8C4727A3E79700B3CA49 /* FriendsView.swift in Sources */,
+				CE07D11F27AA648B008F1321 /* GroupsCell.swift in Sources */,
 				CE4B8C7227A401E700B3CA49 /* NewsCollectionView.swift in Sources */,
 				CE31853727A1994400DA40B1 /* MainScene.swift in Sources */,
 				CE4B8C4027A3E77300B3CA49 /* FriendsPresenter.swift in Sources */,

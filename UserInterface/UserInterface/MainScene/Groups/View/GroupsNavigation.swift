@@ -17,8 +17,10 @@ extension GroupsNavigation: IGroupsNavigation {
 
 private extension GroupsNavigation {
     func customizeNavigation() {
-        self.controller?.navigationController?.navigationBar.barTintColor = MainPallete.marble
+        self.controller?.navigationController?.navigationBar.barTintColor = MainPallete.alabaster
         self.controller?.navigationController?.navigationBar.isTranslucent = false
         self.controller?.navigationController?.navigationBar.shadowImage = UIImage()
+        self.controller?.title = "Мои группы"
+        self.controller?.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: MainFont.thonburi(size: FontSize.title).uiFont]
     }
 }
