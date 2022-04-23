@@ -30,10 +30,10 @@ enum NewsConstraint {
 
 enum FriendsConstraint {
     static let width = UIScreen.main.bounds.width
-    static let height: CGFloat = 60
+    static let height: CGFloat = 75
     static let heightHeader: CGFloat = 50
     static let cellMargin: CGFloat = 16
-    static let avatarSize: CGFloat = 50
+    static let avatarSize: CGFloat = 65
 }
 
 enum TextFieldConstraint: CGFloat  {

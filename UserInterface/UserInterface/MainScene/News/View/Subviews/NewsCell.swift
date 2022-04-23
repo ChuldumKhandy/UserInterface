@@ -55,10 +55,10 @@ private extension NewsCell {
     }
     
     func checkImage(imageView: UIImageView, imageName: String?) {
-        if let image = UIImage(named: imageName ?? "default_no_photo") {
+        if let image = UIImage(named: imageName ?? DefaultValue.noPhoto) {
             imageView.image = image
         } else {
-            imageView.image = UIImage(named: "default_no_photo")
+            imageView.image = UIImage(named: DefaultValue.noPhoto)
         }
     }
     

@@ -1,16 +1,26 @@
 import UIKit
 
 protocol IFriendsViewScene: UIView {
+    var getFriendsHandler: (([Friend]) -> Void?)? { get set }
+    var openGalleryHandler: (([String]) -> Void)? { get set }
 }
 
 final class FriendsView: UIView {
     private let friendsTableView = ListOfFriendsTableView()
     private let friendSearchBar = FriendSearchBar()
+    var getFriendsHandler: (([Friend]) -> Void?)?
+    var openGalleryHandler: (([String]) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.customizeView()
-    }
+        self.getFriendsHandler = { [weak self] friends in
+            self?.friendsTableView.setFriends(friends: friends)
+        }
+        self.friendsTableView.selectCellHandler = { [weak self] photos in
+            self?.openGalleryHandler?(photos)
+        }
+}
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

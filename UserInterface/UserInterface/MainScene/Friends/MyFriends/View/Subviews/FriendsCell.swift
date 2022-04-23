@@ -23,9 +23,10 @@ final class FriendsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setDataForCell(avatar: UIImage?, name: String) {
-        self.avatarImageView.image = avatar
+    func setDataForCell(avatar: String?, name: String) {
         self.nameLabel.text = name
+        self.avatarImageView.image = UIImage(named: avatar ?? DefaultValue.noPhoto)
+        
     }
 }
 
@@ -38,7 +39,9 @@ private extension FriendsCell {
     func customizeCell() {
         self.backgroundColor = MainPallete.alabaster
         self.nameLabel.font = MainFont.thonburi(size: FontSize.regular).uiFont
-        self.avatarImageView.contentMode = .scaleAspectFit
+        self.avatarImageView.contentMode = .scaleAspectFill
+        self.avatarImageView.layer.cornerRadius = FriendsConstraint.avatarSize / 2
+        self.avatarImageView.layer.masksToBounds = true
     }
     
     func setConstraints() {
